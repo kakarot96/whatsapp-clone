@@ -10,7 +10,7 @@ function RightHeader() {
     return (
         <Box display='flex' justifyContent='space-between' px={2} py={1.25} bgcolor={Colors.DIVIDER} border={`1px solid ${Colors.BORDER}`}>
             <Box display='flex'>
-                <StyledIconButton style={{padding:'0px 15px 0px 0px'}}>
+                <StyledIconButton style={{padding:'0px',marginRight:'15px',height:'40px'}}>
                 <AccountCircleIcon style={{fontSize:'40px'}}/>
                 </StyledIconButton>
                 <Box display='flex' flexDirection='column' justifyContent='center'>
