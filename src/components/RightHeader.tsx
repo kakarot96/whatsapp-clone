@@ -8,7 +8,7 @@ import { Colors } from '../constants';
 import { StyledIconButton, HeaderIconButton } from './LeftHeader';
 function RightHeader() {
     return (
-        <Box display='flex' justifyContent='space-between' px={2} py={1.25} bgcolor={Colors.DIVIDER}>
+        <Box display='flex' justifyContent='space-between' px={2} py={1.25} bgcolor={Colors.DIVIDER} border={`1px solid ${Colors.BORDER}`}>
             <Box display='flex'>
                 <StyledIconButton style={{padding:'0px 15px 0px 0px'}}>
                 <AccountCircleIcon style={{fontSize:'40px'}}/>

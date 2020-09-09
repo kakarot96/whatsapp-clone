@@ -2,6 +2,7 @@ import React from 'react'
 import { Box, IconButton, Typography, createStyles, makeStyles, Theme, ButtonBase } from '@material-ui/core'
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import { StyledIconButton } from './LeftHeader';
+import { Colors } from '../constants';
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     chatListBox: {
@@ -10,7 +11,7 @@ const useStyles = makeStyles((theme: Theme) =>
             height:'5px !important'
         },
         '&::-webkit-scrollbar-thumb':{
-            backgroundColor:'rgba(0,0,0,.2)',
+            backgroundColor: `${Colors.BORDER}`,
             height:'5px !important'
         }
     },
