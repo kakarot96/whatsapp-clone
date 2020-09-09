@@ -1,6 +1,7 @@
 import React from 'react'
-import { Box, IconButton, Typography, createStyles, makeStyles, Theme } from '@material-ui/core'
+import { Box, IconButton, Typography, createStyles, makeStyles, Theme, ButtonBase } from '@material-ui/core'
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+import { StyledIconButton } from './LeftHeader';
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     chatListBox: {
@@ -12,16 +13,26 @@ const useStyles = makeStyles((theme: Theme) =>
             backgroundColor:'rgba(0,0,0,.2)',
             height:'5px !important'
         }
+    },
+    chatListItemBox: {
+        '&:hover':{
+            backgroundColor:'#ededed'
+        },
+        '&:active':{
+            backgroundColor:'#ebebeb'
+        },
+        cursor:'pointer'
     }
   }),
 );
 function ChatListItem(props:any) {
+    const classes = useStyles();
     return (
-        <Box display='flex'>
+        <Box display='flex' className={classes.chatListItemBox}>
             <Box>
-                <IconButton>
+                <StyledIconButton>
                 <AccountCircleIcon style={{fontSize:'49px'}}/>
-                </IconButton>
+                </StyledIconButton>
             </Box>
             <Box borderBottom='1px solid #efefef' flex={1} display='flex' alignItems='center'>
                 <Box display='flex' flexDirection='column'>

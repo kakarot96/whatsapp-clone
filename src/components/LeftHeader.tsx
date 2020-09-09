@@ -7,16 +7,19 @@ import { Box, IconButton, makeStyles, Theme, createStyles, withStyles } from '@m
 import { Colors } from '../constants';
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
-    root: {
-      padding: theme.spacing(1),
-    },
   }),
 );
-const StyledIconButton = withStyles({
+export const StyledIconButton = withStyles({
     root: {
-      padding: '8px'
+      padding: '8px',
+      color: `${Colors.ICON}`
     }
   })(IconButton);
+export const HeaderIconButton = withStyles({
+root: {
+    marginLeft:'7px'
+}
+})(StyledIconButton);
 function LeftHeader() {
     const classes = useStyles();
     return (
@@ -25,15 +28,15 @@ function LeftHeader() {
             <AccountCircleIcon style={{fontSize:'40px'}}/>
             </StyledIconButton>
             <Box>
-                <StyledIconButton>
+                <HeaderIconButton>
                 <DonutLargeIcon/>
-                </StyledIconButton>
-                <StyledIconButton>
+                </HeaderIconButton>
+                <HeaderIconButton>
                 <ChatIcon/>
-                </StyledIconButton>
-                <StyledIconButton>
+                </HeaderIconButton>
+                <HeaderIconButton>
                 <MoreVertIcon/>
-                </StyledIconButton>
+                </HeaderIconButton>
             </Box>
         </Box>
     )

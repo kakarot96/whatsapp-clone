@@ -1,3 +1,4 @@
 export enum Colors {
-    DIVIDER = "#ededed"
+    DIVIDER = "#ededed",
+    ICON = '#919191'
 }
