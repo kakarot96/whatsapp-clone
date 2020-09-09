@@ -1,10 +1,11 @@
 import React from 'react';
 import './App.css';
+import Dashboard from './components/Dashboard';
 
 function App() {
   return (
-    <div className="App">
-      <h1>WhatsApp Clone</h1>
+    <div className="App" style={{height:'100vh'}}>
+      <Dashboard/>
     </div>
   );
 }
