@@ -27,7 +27,7 @@ function LeftHeader() {
             <StyledIconButton style={{padding:'0px'}}>
             <AccountCircleIcon style={{fontSize:'40px'}}/>
             </StyledIconButton>
-            <Box>
+            <Box display='flex'>
                 <HeaderIconButton>
                 <DonutLargeIcon/>
                 </HeaderIconButton>

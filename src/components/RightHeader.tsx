@@ -17,7 +17,7 @@ function RightHeader() {
                     <Typography variant='body1'>Hemant Mangla</Typography>
                 </Box>
             </Box>
-            <Box>
+            <Box display='flex'>
                 <HeaderIconButton>
                 <SearchIcon/>
                 </HeaderIconButton>
