@@ -31,9 +31,7 @@ function ChatListItem(props:any) {
     return (
         <Box display='flex' className={classes.chatListItemBox}>
             <Box>
-                <StyledIconButton>
-                <AccountCircleIcon style={{fontSize:'49px'}}/>
-                </StyledIconButton>
+                <AccountCircleIcon style={{fontSize:'49px',padding:'8px',color:`${Colors.ICON}`}}/>
             </Box>
             <Box borderBottom='1px solid #efefef' flex={1} display='flex' alignItems='center'>
                 <Box display='flex' flexDirection='column'>
