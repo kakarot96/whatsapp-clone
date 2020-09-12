@@ -4,7 +4,7 @@ import Dashboard from './components/Dashboard';
 
 function App() {
   return (
-    <div className="App" style={{height:'100vh'}}>
+    <div className="App" style={{height:'100vh',overflow:'hidden'}}>
       <Dashboard/>
     </div>
   );
