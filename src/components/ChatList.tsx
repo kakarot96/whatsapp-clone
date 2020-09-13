@@ -3,6 +3,7 @@ import { Box, IconButton, Typography, createStyles, makeStyles, Theme, ButtonBas
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import { StyledIconButton } from './LeftHeader';
 import { Colors } from '../constants';
+import { Link, useParams } from 'react-router-dom';
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     chatListBox: {
@@ -26,6 +27,20 @@ const useStyles = makeStyles((theme: Theme) =>
     }
   }),
 );
+
+function ChatList(props:any) {
+    const classes = useStyles();
+    return (
+        <Box flex={1} overflow='auto' className={classes.chatListBox}>
+            {props.chatRooms && props.chatRooms.map((chatRoom:any,index:number)=>(
+            <Link to={`/rooms/${chatRoom.id}`} style={{textDecoration:'none',color:'unset'}}>
+            <ChatListItem title={chatRoom.data.name} subtitle='This is the last message'/>
+            </Link>
+            ))}
+        </Box>
+    )
+}
+
 function ChatListItem(props:any) {
     const classes = useStyles();
     return (
@@ -41,26 +56,6 @@ function ChatListItem(props:any) {
                 <Box>
                 </Box>
             </Box>
-        </Box>
-    )
-}
-
-function ChatList(props:any) {
-    const classes = useStyles();
-    return (
-        <Box flex={1} overflow='auto' className={classes.chatListBox}>
-            <ChatListItem title='Kunal Aggarwal' subtitle='This is the last message'/>
-            <ChatListItem title='Kunal Aggarwal' subtitle='This is the last message'/>
-            <ChatListItem title='Kunal Aggarwal' subtitle='This is the last message'/>
-            <ChatListItem title='Kunal Aggarwal' subtitle='This is the last message'/>
-            <ChatListItem title='Kunal Aggarwal' subtitle='This is the last message'/>
-            <ChatListItem title='Kunal Aggarwal' subtitle='This is the last message'/>
-            <ChatListItem title='Kunal Aggarwal' subtitle='This is the last message'/>
-            <ChatListItem title='Kunal Aggarwal' subtitle='This is the last message'/>
-            <ChatListItem title='Kunal Aggarwal' subtitle='This is the last message'/>
-            <ChatListItem title='Kunal Aggarwal' subtitle='This is the last message'/>
-            <ChatListItem title='Kunal Aggarwal' subtitle='This is the last message'/>
-            <ChatListItem title='Kunal Aggarwal' subtitle='This is the last message'/>
         </Box>
     )
 }

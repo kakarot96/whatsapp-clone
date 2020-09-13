@@ -5,6 +5,8 @@ import ChatIcon from '@material-ui/icons/Chat';
 import DonutLargeIcon from '@material-ui/icons/DonutLarge';
 import { Box, IconButton, makeStyles, Theme, createStyles, withStyles } from '@material-ui/core';
 import { Colors } from '../constants';
+import { useRecoilState } from 'recoil';
+import { userState } from '../state';
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
   }),
@@ -21,11 +23,15 @@ root: {
 }
 })(StyledIconButton);
 function LeftHeader() {
-    const classes = useStyles();
+  const [user,setUser]:any = useRecoilState(userState);
+  const classes = useStyles();
     return (
         <Box display='flex' justifyContent='space-between' px={2} py={1.25} bgcolor={Colors.DIVIDER}>
             <StyledIconButton style={{padding:'0px'}}>
-            <AccountCircleIcon style={{fontSize:'40px'}}/>
+            {
+            user?<img src={JSON.parse(user).photoURL} style={{width:'35px',height:'35px', borderRadius:'50%'}}/>
+            :<AccountCircleIcon style={{fontSize:'40px'}}/>
+            }
             </StyledIconButton>
             <Box display='flex'>
                 <HeaderIconButton>
