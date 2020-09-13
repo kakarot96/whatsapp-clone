@@ -30,6 +30,17 @@ const ChatMessageText = withStyles({
     }
   })(Typography);
 
+
+function ChatWindow() {
+    const classes = useStyles();
+    return (
+        <Box flex={1} overflow='auto' className={classes.chatWindowBox} p={4}>
+            <ChatMessage message='Hi, Kunal here.' type='sent'/>
+            <ChatMessage message="Hi Kunal, how are you. How's the COVID situation in your city" type='received'/>
+        </Box>
+    )
+}
+
 function ChatMessage(props:any){
     const classes = useStyles();
     return (
@@ -39,15 +50,4 @@ function ChatMessage(props:any){
         </Box>
     )
 }
-function ChatWindow() {
-    const classes = useStyles();
-    return (
-        <Box flex={1} overflow='auto' className={classes.chatWindowBox} p={4}>
-            <ChatMessage message='Hi, Kunal here.' type='sent'/>
-            <ChatMessage message="Hi Kunal, how are you. How's the COVID situation in your city" type='received'/>
-
-        </Box>
-    )
-}
-
 export default ChatWindow
