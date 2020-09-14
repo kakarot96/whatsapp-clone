@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Box, makeStyles, Theme, createStyles, Typography, withStyles } from '@material-ui/core'
 import WhatsAppBackground from '../images/whatsapp_bg.png'
 import { Colors } from '../constants';
@@ -30,13 +30,15 @@ const ChatMessageText = withStyles({
     }
   })(Typography);
 
-
-function ChatWindow() {
+function ChatWindow(props:any) {
     const classes = useStyles();
     return (
         <Box flex={1} overflow='auto' className={classes.chatWindowBox} p={4}>
-            <ChatMessage message='Hi, Kunal here.' type='sent'/>
-            <ChatMessage message="Hi Kunal, how are you. How's the COVID situation in your city" type='received'/>
+            {   
+                props.messages && props.messages.map((message:any,index:number)=>(
+                    <ChatMessage type={props.userName===message.name && 'sent'} key={message.message} message={message.message} time={new Date(message.timestamp && message.timestamp.toDate().toUTCString())}/>
+                ))
+            }
         </Box>
     )
 }

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import SearchIcon from '@material-ui/icons/Search';
@@ -32,4 +32,4 @@ function RightHeader(props:any) {
     )
 }
 
-export default RightHeader
+export default React.memo(RightHeader)
