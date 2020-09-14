@@ -6,7 +6,7 @@ import AttachFileIcon from '@material-ui/icons/AttachFile';
 import { Box, Typography } from '@material-ui/core';
 import { Colors } from '../constants';
 import { StyledIconButton, HeaderIconButton } from './LeftHeader';
-function RightHeader() {
+function RightHeader(props:any) {
     return (
         <Box display='flex' justifyContent='space-between' px={2} py={1.25} bgcolor={Colors.DIVIDER} border={`1px solid ${Colors.BORDER}`}>
             <Box display='flex'>
@@ -14,7 +14,7 @@ function RightHeader() {
                 <AccountCircleIcon style={{fontSize:'40px'}}/>
                 </StyledIconButton>
                 <Box display='flex' flexDirection='column' justifyContent='center'>
-                    <Typography variant='body1'>Hemant Mangla</Typography>
+                    <Typography variant='body1'>{props.chatRoomName}</Typography>
                 </Box>
             </Box>
             <Box display='flex'>
