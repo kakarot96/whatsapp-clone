@@ -40,7 +40,7 @@ function RightPanel() {
     return (
         <Box flex={0.7} display='flex' flexDirection='column'>
             <RightHeader chatRoomName={chatRoomName}/>
-            <ChatWindow userName={JSON.parse(user).displayName} messages={messages}/>
+            <ChatWindow userName={(JSON.parse(user) && JSON.parse(user).displayName) || 'Kunal'} messages={messages}/>
             <ChatFooter sendMessage={sendMessage}/>
         </Box>
     )

@@ -9,7 +9,7 @@ import { useRecoilState } from 'recoil'
 import { userState } from '../state'
 
 function Dashboard(props:any) {
-     const [user,setUser] = useRecoilState(userState);
+     const [user,setUser] = useState('userState');
     return (
         <Box height='inherit' display='flex'>
             {
