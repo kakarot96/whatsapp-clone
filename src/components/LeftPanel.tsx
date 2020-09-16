@@ -6,7 +6,7 @@ import ChatList from './ChatList'
 import { Colors } from '../constants'
 import db from '../firebase'
 
-function LeftPanel() {
+function LeftPanel(props:any) {
     const [chatRooms,setChatRooms]:any = useState()
     useEffect(() => {
         db.collection('chatrooms').onSnapshot((snapshot)=>{
@@ -17,7 +17,7 @@ function LeftPanel() {
         })      
     }, [])
     return (
-        <Box flex={0.3} display='flex' flexDirection='column' borderRight={`1px solid ${Colors.DIVIDER}`}>
+        <Box flex={props.isMobile?1:0.3} display='flex' flexDirection='column' borderRight={`1px solid ${Colors.DIVIDER}`}>
             <LeftHeader/>
             <SearchBand/>
             <ChatList chatRooms={chatRooms}/>

@@ -9,7 +9,7 @@ import firebase from 'firebase'
 import { useRecoilState } from 'recoil'
 import { userState } from '../state'
 
-function RightPanel() {
+function RightPanel(props:any) {
     const params:any = useParams();
     const [chatRoomName,setChatRoomName]:any = useState();
     const [messages,setMessages]:any = useState();
@@ -38,7 +38,7 @@ function RightPanel() {
         }
     }
     return (
-        <Box flex={0.7} display='flex' flexDirection='column'>
+        <Box flex={props.isMobile?1:0.7} display='flex' flexDirection='column'>
             <RightHeader chatRoomName={chatRoomName}/>
             <ChatWindow userName={JSON.parse(user).displayName} messages={messages}/>
             <ChatFooter sendMessage={sendMessage}/>
