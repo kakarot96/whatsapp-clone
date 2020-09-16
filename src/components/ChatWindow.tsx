@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { Box, makeStyles, Theme, createStyles, Typography, withStyles } from '@material-ui/core'
 import WhatsAppBackground from '../images/whatsapp_bg.png'
 import { Colors } from '../constants';
@@ -32,6 +32,10 @@ const ChatMessageText = withStyles({
 
 function ChatWindow(props:any) {
     const classes = useStyles();
+    const divRef:any = useRef(null);
+    useEffect(() => {
+        divRef.current.scrollIntoView({ block: 'end' });
+      });
     return (
         <Box flex={1} overflow='auto' className={classes.chatWindowBox} p={4}>
             {   
@@ -39,6 +43,7 @@ function ChatWindow(props:any) {
                     <ChatMessage type={props.userName===message.name && 'sent'} key={message.message} message={message.message} time={new Date(message.timestamp && message.timestamp.toDate().toUTCString())}/>
                 ))
             }
+            <div ref={divRef}></div>
         </Box>
     )
 }
